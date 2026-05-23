@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout del teclado HybridCrypt.
+    Este View es lo que el usuario ve como teclado en pantalla.
+    Se carga en CipherKeyboardService.onCreateInputView().
+
+    Estructura:
+      - Fila superior: indicador de estado y nombre del contacto activo
+      - Filas QWERTY: teclas de escritura estándar
+      - Fila inferior: botones de cifrado/descifrado y retroceso
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#1A1A2E"
+    android:padding="4dp">
+
+    <!-- ── Barra de estado ─────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:background="#16213E">
+
+        <TextView
+            android:id="@+id/tv_estado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="HybridCrypt"
+            android:textColor="#E94560"
+            android:textSize="11sp"
+            android:fontFamily="monospace" />
+
+        <!-- Selector de contacto activo — toca para cambiar -->
+        <TextView
+            android:id="@+id/tv_selector_contacto"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="👤 Sin contacto ▾"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:background="#0F3460"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+
+    <!-- ── Fila 1: números ─────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp">
+
+        <Button android:id="@+id/key_1" style="@style/KeyStyle" android:text="1" android:layout_weight="1"/>
+        <Button android:id="@+id/key_2" style="@style/KeyStyle" android:text="2" android:layout_weight="1"/>
+        <Button android:id="@+id/key_3" style="@style/KeyStyle" android:text="3" android:layout_weight="1"/>
+        <Button android:id="@+id/key_4" style="@style/KeyStyle" android:text="4" android:layout_weight="1"/>
+        <Button android:id="@+id/key_5" style="@style/KeyStyle" android:text="5" android:layout_weight="1"/>
+        <Button android:id="@+id/key_6" style="@style/KeyStyle" android:text="6" android:layout_weight="1"/>
+        <Button android:id="@+id/key_7" style="@style/KeyStyle" android:text="7" android:layout_weight="1"/>
+        <Button android:id="@+id/key_8" style="@style/KeyStyle" android:text="8" android:layout_weight="1"/>
+        <Button android:id="@+id/key_9" style="@style/KeyStyle" android:text="9" android:layout_weight="1"/>
+        <Button android:id="@+id/key_0" style="@style/KeyStyle" android:text="0" android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!-- ── Fila 2: QWERTY ─────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp">
+
+        <Button android:id="@+id/key_q" style="@style/KeyStyle" android:text="Q" android:layout_weight="1"/>
+        <Button android:id="@+id/key_w" style="@style/KeyStyle" android:text="W" android:layout_weight="1"/>
+        <Button android:id="@+id/key_e" style="@style/KeyStyle" android:text="E" android:layout_weight="1"/>
+        <Button android:id="@+id/key_r" style="@style/KeyStyle" android:text="R" android:layout_weight="1"/>
+        <Button android:id="@+id/key_t" style="@style/KeyStyle" android:text="T" android:layout_weight="1"/>
+        <Button android:id="@+id/key_y" style="@style/KeyStyle" android:text="Y" android:layout_weight="1"/>
+        <Button android:id="@+id/key_u" style="@style/KeyStyle" android:text="U" android:layout_weight="1"/>
+        <Button android:id="@+id/key_i" style="@style/KeyStyle" android:text="I" android:layout_weight="1"/>
+        <Button android:id="@+id/key_o" style="@style/KeyStyle" android:text="O" android:layout_weight="1"/>
+        <Button android:id="@+id/key_p" style="@style/KeyStyle" android:text="P" android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!-- ── Fila 3: ASDFGH ─────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp">
+
+        <Button android:id="@+id/key_a" style="@style/KeyStyle" android:text="A" android:layout_weight="1"/>
+        <Button android:id="@+id/key_s" style="@style/KeyStyle" android:text="S" android:layout_weight="1"/>
+        <Button android:id="@+id/key_d" style="@style/KeyStyle" android:text="D" android:layout_weight="1"/>
+        <Button android:id="@+id/key_f" style="@style/KeyStyle" android:text="F" android:layout_weight="1"/>
+        <Button android:id="@+id/key_g" style="@style/KeyStyle" android:text="G" android:layout_weight="1"/>
+        <Button android:id="@+id/key_h" style="@style/KeyStyle" android:text="H" android:layout_weight="1"/>
+        <Button android:id="@+id/key_j" style="@style/KeyStyle" android:text="J" android:layout_weight="1"/>
+        <Button android:id="@+id/key_k" style="@style/KeyStyle" android:text="K" android:layout_weight="1"/>
+        <Button android:id="@+id/key_l" style="@style/KeyStyle" android:text="L" android:layout_weight="1"/>
+        <Button android:id="@+id/key_anio" style="@style/KeyStyle" android:text="Ñ" android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!-- ── Fila 4: ZXCVB ─────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp">
+
+        <Button android:id="@+id/key_mayus" style="@style/KeyStyle" android:text="⇧" android:layout_weight="1.5"/>
+        <Button android:id="@+id/key_z" style="@style/KeyStyle" android:text="Z" android:layout_weight="1"/>
+        <Button android:id="@+id/key_x" style="@style/KeyStyle" android:text="X" android:layout_weight="1"/>
+        <Button android:id="@+id/key_c" style="@style/KeyStyle" android:text="C" android:layout_weight="1"/>
+        <Button android:id="@+id/key_v" style="@style/KeyStyle" android:text="V" android:layout_weight="1"/>
+        <Button android:id="@+id/key_b" style="@style/KeyStyle" android:text="B" android:layout_weight="1"/>
+        <Button android:id="@+id/key_n" style="@style/KeyStyle" android:text="N" android:layout_weight="1"/>
+        <Button android:id="@+id/key_m" style="@style/KeyStyle" android:text="M" android:layout_weight="1"/>
+        <Button android:id="@+id/key_back" style="@style/KeyStyle" android:text="⌫" android:layout_weight="1.5"/>
+
+    </LinearLayout>
+
+    <!-- ── Fila 5: espacio y puntuación ───────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp">
+
+        <Button android:id="@+id/key_coma"  style="@style/KeyStyle" android:text="," android:layout_weight="1"/>
+        <Button android:id="@+id/key_space" style="@style/KeyStyle" android:text="ESPACIO" android:layout_weight="6"/>
+        <Button android:id="@+id/key_punto" style="@style/KeyStyle" android:text="." android:layout_weight="1"/>
+        <Button android:id="@+id/key_enter" style="@style/KeyStyle" android:text="↵" android:layout_weight="2"
+            android:backgroundTint="#0F3460"/>
+
+    </LinearLayout>
+
+    <!-- ── Fila 6: botones de cifrado (prominentes) ───── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="4dp">
+
+        <Button
+            android:id="@+id/btn_cifrar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="3dp"
+            android:text="🔒 CIFRAR"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:backgroundTint="#E94560"
+            android:stateListAnimator="@null" />
+
+        <Button
+            android:id="@+id/btn_descifrar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="3dp"
+            android:text="🔓 DESCIFRAR"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:backgroundTint="#0F3460"
+            android:stateListAnimator="@null" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A1A2E"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <!-- Logo / título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔐"
+        android:textSize="64sp"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HybridCrypt"
+        android:textColor="#E94560"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cifrado de extremo a extremo\npara cualquier app de chat"
+        android:textColor="#888888"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- Pasos de configuración -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#0F3460"
+        android:padding="16dp"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ESTADO DEL SISTEMA"
+            android:textColor="#E94560"
+            android:textSize="11sp"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_paso1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargando..."
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_paso2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargando..."
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_paso3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargando..."
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_paso4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargando..."
+            android:textSize="14sp"
+            android:fontFamily="monospace"/>
+
+    </LinearLayout>
+
+    <!-- Botón principal -->
+    <Button
+        android:id="@+id/btn_ir_ajustes"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Configurar ahora"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#E94560"
+        android:stateListAnimator="@null"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="El teclado funciona en WhatsApp, Telegram,\nInstagram y cualquier app con campo de texto."
+        android:textColor="#444466"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

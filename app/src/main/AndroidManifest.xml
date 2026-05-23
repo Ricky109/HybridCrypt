@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ── Permisos ─────────────────────────────────────────── -->
+
+    <!-- Necesario para que el teclado funcione como método de entrada -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Para mostrar y escanear códigos QR de claves públicas -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HybridCrypt"
+        tools:targetApi="31">
+
+        <!-- ── Activity principal ────────────────────────────── -->
+        <!-- Punto de entrada: explica cómo activar el teclado   -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ── Activity de ajustes ───────────────────────────── -->
+        <!-- Gestión de PIN, claves RSA y contactos              -->
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false"
+            android:label="Ajustes HybridCrypt" />
+
+        <!-- ── Servicio del teclado ──────────────────────────── -->
+        <!--
+            InputMethodService es el corazón de la app.
+            - android:permission garantiza que solo el sistema puede
+              vincular este servicio (seguridad obligatoria para IME).
+            - La etiqueta "label" es lo que el usuario ve en
+              Ajustes → Teclados → Métodos de entrada disponibles.
+        -->
+        <service
+            android:name=".service.CipherKeyboardService"
+            android:exported="true"
+            android:label="HybridCrypt Keyboard"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+
+            <!-- Apunta al descriptor del método de entrada -->
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+
+        </service>
+
+    </application>
+
+</manifest>
